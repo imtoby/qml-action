@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>../../../qml_controls/TimeSelector.qml</file>
+        <file>../../../qml_controls/Stepper.qml</file>
+        <file>../../../qml_controls/NoonSelector.qml</file>
+        <file>../../../qml_controls/VerticalLine.qml</file>
+        <file>../../../qml_controls/UnitText.qml</file>
+        <file>../../../qml_controls/Colors.qml</file>
+        <file>../../../qml_controls/qmldir</file>
+    </qresource>
+</RCC>
