@@ -1,0 +1,61 @@
+/********************************************************************
+Copyright 2021 DongshuangZhao <imtoby@126.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
+THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+********************************************************************/
+import QtQuick 2.12
+
+Item {
+    id: id_noon_selector
+    objectName: "qml-action-noon-selector"
+    implicitWidth: 120
+    implicitHeight: 240
+    property int currentIndex: 0
+
+    property int normalPixelSize: 36
+    property int currentPixelSize: 48
+
+    Text {
+        anchors.bottom: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        horizontalAlignment: Text.AlignHCenter
+        text: (currentIndex === 1) ? qsTr("AM", "上午") : qsTr("PM", "下午")
+        font.pixelSize: normalPixelSize
+        color: Colors.qaGray99
+    }
+
+    Text {
+        anchors.fill: parent
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        text: (currentIndex === 0) ? qsTr("AM", "上午") : qsTr("PM", "下午")
+        font.pixelSize: currentPixelSize
+        color: Colors.qaGray33
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        anchors.topMargin: - currentPixelSize
+        onReleased: {
+            if (containsMouse) {
+                currentIndex = (currentIndex + 1) % 2
+            }
+        }
+    }
+}
