@@ -14,7 +14,7 @@ Window {
         anchors.centerIn: parent
 
         // test case 12 or 24
-        hourFormat: TimeSelector.HourFormat.QA_12Hours
+//        hourFormat: TimeSelector.HourFormat.QA_12Hours
 
         // test case unit
 //        hourUnitItem.text: "时"

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>plays.json</file>
+        <file>../../../qml_controls/JSONListModel.qml</file>
+    </qresource>
+</RCC>
